@@ -218,7 +218,7 @@ class Media extends CI_Controller
                 'content' => $this->input->post('content')
             );
             if ($this->media_model->create_article($article_item)) {
-                $data['result'] = TRUE;
+                header("location: " . site_url('media'));
             } else {
                 $data['result'] = FALSE;
             }
@@ -275,7 +275,7 @@ class Media extends CI_Controller
                 'content' => $this->input->post('content')
             );
             if ($this->media_model->update_article($article_item)) {
-                $data['result'] = TRUE;
+                header("location: " . site_url('media'));
             } else {
                 $data['result'] = FALSE;
             }

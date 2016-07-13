@@ -51,10 +51,6 @@
                 <div class="ui error message">
                     <p>error</p>
                 </div>
-            <?php } else if (isset($result) && $result === TRUE) { ?>
-                <div class="ui blue message">
-                    <p>seccess</p>
-                </div>
             <?php } ?>
             <button class="ui blue button" type="submit">提交</button>
         </div>
