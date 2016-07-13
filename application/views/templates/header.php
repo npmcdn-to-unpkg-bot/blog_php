@@ -14,13 +14,6 @@
                             <i class="user icon"></i>
                         </a>
                     </div>
-                    <div class="ui item dropdown">
-                        <i class="world icon"></i>
-                        <div class="menu">
-                            <div class="item"><i class="cn flag"></i>Chinese</div>
-                            <div class="item"><i class="us flag"></i>English</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -38,12 +31,6 @@
                     } else {
                         echo site_url('account/sign_in');
                     } ?>"><i class="user icon"></i></a>
-                    <div class="ui item dropdown"><i class="world icon"></i>
-                        <div class="menu">
-                            <div class="item"><i class="cn flag"></i>Chinese</div>
-                            <div class="item"><i class="us flag"></i>English</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

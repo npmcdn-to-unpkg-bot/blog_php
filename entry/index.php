@@ -97,7 +97,7 @@ switch (ENVIRONMENT)
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-	$system_path = '/home/blog/website/blog_php/system';
+	$system_path = '/Users/Origin/Documents/website/sites/blog_php/system';
 
 /*
  *---------------------------------------------------------------
@@ -114,7 +114,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = '/home/blog/website/blog_php/application';
+	$application_folder = '/Users/Origin/Documents/website/sites/blog_php/application';
 
 /*
  *---------------------------------------------------------------

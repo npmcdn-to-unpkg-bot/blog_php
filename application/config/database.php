@@ -74,8 +74,8 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-    'dsn' => 'mysql:host=localhost;dbname=myour_blog',
-    'hostname' => 'localhost',
+    'dsn' => 'mysql:host=114.215.116.222;dbname=myour_blog',
+    'hostname' => '114.215.116.222',
     'username' => 'origin',
     'password' => 'Csd1314user..',
     'database' => 'myour_blog',
