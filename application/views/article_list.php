@@ -34,9 +34,13 @@
                             </span>
                             </div>
                         </a>
-                    <?php } ?>
-
-                    <?php echo $page ?>
+                    <?php }
+                    if (empty($news)) { ?>
+                        <div class="ui message">
+                            无数据
+                        </div>
+                    <?php }
+                    echo $page ?>
                 </div>
             </div>
         </div>

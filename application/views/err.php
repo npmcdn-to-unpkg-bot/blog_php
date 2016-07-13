@@ -9,7 +9,7 @@
     <?php include APPPATH . '/views/templates/header.php' ?>
     <section>
         <div class="ui container">
-            <h3>err</h3>
+            <div class="ui red message">请登陆后再操作</div>
         </div>
     </section>
     <?php include APPPATH . '/views/templates/footer.php' ?>
