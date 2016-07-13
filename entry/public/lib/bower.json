@@ -1,0 +1,22 @@
+{
+  "name": "lib",
+  "homepage": "https://github.com/DasonCheng/SinglePage",
+  "authors": [
+    "DasonCheng <dasoncheng@foxmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "^2.2.1",
+    "typeit": "^4.2.3",
+    "animate.css": "^3.5.2"
+  }
+}
