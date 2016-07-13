@@ -35,10 +35,6 @@
                         <div class="ui error message">
                             <p>Sign In error</p>
                         </div>
-                    <?php } else if (isset($result) && $result === TRUE) { ?>
-                        <div class="ui blue message">
-                            <p>Sign In seccess</p>
-                        </div>
                     <?php } ?>
                     <button class="ui blue button" type="submit">Sign in</button>
                     </form>

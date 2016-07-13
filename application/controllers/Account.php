@@ -38,12 +38,16 @@ class Account extends CI_Controller
             if (count($loginUser) === 1 && password_verify($this->input->post('password'), $loginUser[0]['pwd'])) {
                 $_SESSION['user'] = $loginUser[0];
                 $this->account_model->add_user_visit(array('user_id' => $loginUser[0]['id']));
-                $data['result'] = TRUE;
+                header("location: " . site_url('account/center'));
             } else {
                 $data['result'] = FALSE;
             }
         }
-        $data['title'] = 'Sign In';
+        $data['title'] = array(
+            'title' => 'Sign In',
+            'description' => 'account sign in',
+            'keywords' => 'myour,DasonCheng,脉友,个人博客'
+        );
         $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
         $this->load->view('sign_in', $data);
     }
@@ -79,21 +83,36 @@ class Account extends CI_Controller
                 $data['result'] = FALSE;
             }
         }
-        $data['title'] = 'Sign Up';
+
+        $data['title'] = array(
+            'title' => 'Sign Up',
+            'description' => 'account sign up',
+            'keywords' => 'myour,DasonCheng,脉友,个人博客'
+        );
         $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
         $this->load->view('sign_up', $data);
     }
 
     public function center()
     {
-        $data['title'] = 'center';
+
+        $data['title'] = array(
+            'title' => 'CENTER',
+            'description' => 'preson center',
+            'keywords' => 'myour,DasonCheng,脉友,个人博客'
+        );
         $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
         $this->load->view('user_center', $data);
     }
 
     public function error()
     {
-        $data['title'] = 'ERROR';
+
+        $data['title'] = array(
+            'title' => 'ERROR',
+            'description' => 'err info',
+            'keywords' => '脉友,个人博客'
+        );
         $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
         $this->load->view('err', $data);
     }

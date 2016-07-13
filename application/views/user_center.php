@@ -10,18 +10,13 @@
     <?php include APPPATH . '/views/templates/header.php' ?>
     <section>
         <div class="ui container">
+            <h2 class="ui center aligned icon header">
+                <i class="circular users icon"></i>
+                <?php echo $session['name'] ?>
+            </h2>
             <div class="ui icon menu">
-                <a class="item">
-                    <i class="gamepad icon"></i>
-                </a>
-                <a class="item">
-                    <i class="video camera icon"></i>
-                </a>
-                <a class="item" href="<?php echo site_url('media/create'); ?>">
+                <a class="item" data-content="Create Article" href="<?php echo site_url('media/create'); ?>">
                     <i class="write icon"></i>
-                </a>
-                <a class="item" href="<?php echo site_url('media/update'); ?>">
-                    <i class="write square icon"></i>
                 </a>
             </div>
         </div>
