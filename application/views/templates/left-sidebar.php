@@ -12,6 +12,18 @@
         <div class="content"><a href="mailto:dasoncheng@yahoo.com">dasoncheng@yahoo.com</a></div>
     </div>
     <div class="item">
+        <i class="behance icon"></i>
+        <div class="content"><a href="https://www.behance.net/myour">Behance</a></div>
+    </div>
+    <div class="item">
+        <i class="facebook f icon"></i>
+        <div class="content"><a href="https://www.facebook.com/dasoncheng">Facebook</a></div>
+    </div>
+    <div class="item">
+        <i class="wechat icon"></i>
+        <div class="content">654385230</div>
+    </div>
+    <div class="item">
         <i class="linkify icon"></i>
         <div class="content"><a href="http://myour.cc">myour.cc</a></div>
     </div>

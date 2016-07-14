@@ -4,5 +4,5 @@
     <i class="right angle icon divider"></i>
     <a class="section" href="<?php echo site_url('/media'); ?>">Media</a>
     <i class="right angle icon divider"></i>
-    <div class="active section"><?php echo $news_item['title']; ?></div>
+    <i class="file text outline icon"></i>
 </div>
