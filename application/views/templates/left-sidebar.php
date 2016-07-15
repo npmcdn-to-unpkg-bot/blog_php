@@ -25,7 +25,7 @@
     </div>
     <div class="item">
         <i class="linkify icon"></i>
-        <div class="content"><a href="http://myour.cc">myour.cc</a></div>
+        <div class="content"><a href="https://myour.cc">myour.cc</a></div>
     </div>
     <div class="item">
         <i class="tag icon"></i>
