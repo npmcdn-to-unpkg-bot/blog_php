@@ -41,10 +41,10 @@ class Media extends CI_Controller
         $config['total_rows'] = $this->media_model->get_article_count($sort);
         $this->pagination->initialize($config);
         if (is_numeric($page) && ($page >= 1)) {
-            $data['title'] =array(
-                'title'=> 'MEDIA',
-                'description'   =>'文章列表',
-                'keywords'=>'博客,DasonCheng,脉友,个人博客'
+            $data['title'] = array(
+                'title' => 'MEDIA',
+                'description' => '文章列表',
+                'keywords' => '博客,DasonCheng,脉友,个人博客'
             );
             $data['sorts'] = $this->media_model->get_sorts_article();
             $data['sort'] = 'all';
@@ -81,10 +81,10 @@ class Media extends CI_Controller
         $config['total_rows'] = $this->media_model->get_article_count($sort);
         $this->pagination->initialize($config);
         if (is_numeric($page) && ($page >= 1)) {
-            $data['title'] =array(
-                'title'=> 'MEDIA',
-                'description'   =>'文章列表',
-                'keywords'=>'博客,DasonCheng,脉友,个人博客'
+            $data['title'] = array(
+                'title' => 'MEDIA',
+                'description' => '文章列表',
+                'keywords' => '博客,DasonCheng,脉友,个人博客'
             );
             $data['sorts'] = $this->media_model->get_sorts_article();
             $data['sort'] = $sort;
@@ -142,10 +142,10 @@ class Media extends CI_Controller
             $data['news'] = $this->media_model->get_article_list(NULL, $page - 1);
             $data['page'] = $this->media_model->get_article_count(NULL) / 10 >= 1 ? $this->pagination->create_links() : '';
         }
-        $data['title'] =array(
-            'title'=> 'MEDIA',
-            'description'   =>'文章列表',
-            'keywords'=>'博客,DasonCheng,脉友,个人博客'
+        $data['title'] = array(
+            'title' => 'MEDIA',
+            'description' => '文章列表',
+            'keywords' => '博客,DasonCheng,脉友,个人博客'
         );
         $data['sorts'] = $this->media_model->get_sorts_article();
         $data['sort'] = 'search';
@@ -154,7 +154,7 @@ class Media extends CI_Controller
         $this->load->view('article_list', $data);
     }
 
-    public function article($id)
+    public function article($id, $page = 1)
     {
         if (isset($id) && is_numeric($id)) {
             $data['news_item'] = $this->media_model->get_article_info($id);
@@ -162,11 +162,16 @@ class Media extends CI_Controller
             if (empty($data['news_item'])) {
                 show_404();
             }
-            $data['title'] =array(
-                'title'=> $data['news_item']['title'],
-                'description'   =>$data['news_item']['title'],
-                'keywords'=>'博客,DasonCheng,脉友,个人博客'
+            $data['title'] = array(
+                'title' => $data['news_item']['title'],
+                'description' => $data['news_item']['title'],
+                'keywords' => '博客,DasonCheng,脉友,个人博客'
             );
+            $comment_list = $this->media_model->article_comment_list($data['news_item']['id'], $page - 1);
+            for ($i = 0; $i < count($comment_list); $i++) {
+                $comment_list[$i]['down_comment'] = $this->media_model->comment_down_list($comment_list[$i]['id']);
+            }
+            $data['article_comment'] = $comment_list;
             $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
             $user_id = isset($_SESSION['user']) ? $_SESSION['user']['id'] : 1;
             $this->media_model->add_article_visit(array(
@@ -223,10 +228,10 @@ class Media extends CI_Controller
                 $data['result'] = FALSE;
             }
         }
-        $data['title'] =array(
-            'title'=> 'EDITOR',
-            'description'   =>'添加文章',
-            'keywords'=>'博客,DasonCheng,脉友,个人博客'
+        $data['title'] = array(
+            'title' => 'EDITOR',
+            'description' => '添加文章',
+            'keywords' => '博客,DasonCheng,脉友,个人博客'
         );
         $data['article_title'] = '';
         $data['article_content'] = '';
@@ -288,10 +293,10 @@ class Media extends CI_Controller
             }
             $data['sorts'] = $this->media_model->get_sorts_all();
             $data['title'] = $data['news_item']['title'];
-            $data['title'] =array(
-                'title'=> $data['news_item']['title'],
-                'description'   =>$data['news_item']['title'],
-                'keywords'=>'博客,DasonCheng,脉友,个人博客'
+            $data['title'] = array(
+                'title' => $data['news_item']['title'],
+                'description' => $data['news_item']['title'],
+                'keywords' => '博客,DasonCheng,脉友,个人博客'
             );
             $data['article_title'] = $data['news_item']['title'];
             $data['article_content'] = $data['news_item']['content'];
@@ -321,10 +326,10 @@ class Media extends CI_Controller
 
     public function error()
     {
-        $data['title'] =array(
-            'title'=> 'ERROR',
-            'description'   =>'error info',
-            'keywords'=>'博客,DasonCheng,脉友,个人博客'
+        $data['title'] = array(
+            'title' => 'ERROR',
+            'description' => 'error info',
+            'keywords' => '博客,DasonCheng,脉友,个人博客'
         );
         $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
         $this->load->view('err', $data);

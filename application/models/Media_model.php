@@ -78,6 +78,40 @@ class Media_model extends CI_Model
         return $query->result_array();
     }
 
+    public function article_comment_list($article_id, $page)
+    {
+        $page = $page < 0 ? 0 : $page;
+        $sql = "SELECT
+                  id,
+                  date,
+                  comment,
+                  user_id
+                FROM article_comment
+                WHERE id <= (SELECT id
+                             FROM article_comment
+                             WHERE article_id = ?
+                             ORDER BY date DESC
+                             LIMIT ?, 1)
+                AND article_id = ?
+                ORDER BY DATE DESC
+                LIMIT 10;";
+        $query = $this->db->query($sql, array($article_id, $page * 10, $article_id));
+        return $query->result_array();
+    }
+
+    public function comment_down_list($comment_id)
+    {
+        $sql = "SELECT
+                  id,
+                  owner_id,
+                  user_id,
+                  comment
+                FROM article_comment_down
+                WHERE comment_id = ?";
+        $query = $this->db->query($sql, array($comment_id));
+        return $query->result_array();
+    }
+
     public function get_article_info($id)
     {
         $sql = "SELECT
