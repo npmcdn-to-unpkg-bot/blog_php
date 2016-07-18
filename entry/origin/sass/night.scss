@@ -1,0 +1,26 @@
+body {
+  background-color: #10151b;
+}
+
+.ui.vertical.menu {
+  background-color: transparent;
+  box-shadow: 0 1px 2px 0 #222121;
+}
+
+.ui.menu {
+  border: 1px solid #222121;
+  .item {
+    color: #96764a;
+    &.active {
+      color: #a27f4e;
+      &:hover{
+        color: #a27f4e;
+      }
+    }
+  }
+  a.item {
+    &:hover {
+      color: #a27f4e;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "mxin/variables";
+
+@media only screen and (min-width: 767px) {
+  .nav-bar-min {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+    height: 40px;
+  }
+  .nav-bar-max {
+    display: none !important;
+  }
+}
+
+header {
+  .ui.menu {
+    border-radius: 0 !important;
+  }
+}

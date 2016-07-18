@@ -1,0 +1,33 @@
+.clearfix::after, .clearfix::before {
+  content: '';
+  display: block;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ui.container {
+  transition: width .6s;
+}
+
+section {
+  min-height: 900px;
+  padding: 2em 0;
+}
+
+footer {
+  height: 40px;
+  background-color: #000;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+}

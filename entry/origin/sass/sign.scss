@@ -1,0 +1,16 @@
+@media only screen and (min-width: 767px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.button {
+    display: block;
+    width: 100% !important;
+  }
+  .ui.big.button, .ui.big.buttons .button, .ui.big.buttons .or {
+    font-size: 1rem;
+  }
+}
+
+.ui.two.column.middle.aligned.very.relaxed.stackable.grid {
+  position: relative !important;
+}
