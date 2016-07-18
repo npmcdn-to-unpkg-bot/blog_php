@@ -82,12 +82,14 @@ class Media_model extends CI_Model
     {
         $page = $page < 0 ? 0 : $page;
         $sql = "SELECT
-                  id,
-                  date,
-                  comment,
-                  user_id
+                  article_comment.id,
+                  article_comment.date,
+                  article_comment.comment,
+                  article_comment.user_id,
+                  users.name
                 FROM article_comment
-                WHERE id <= (SELECT id
+                  INNER JOIN users ON users.id = article_comment.user_id
+                WHERE article_comment.id <= (SELECT id
                              FROM article_comment
                              WHERE article_id = ?
                              ORDER BY date DESC
@@ -102,12 +104,18 @@ class Media_model extends CI_Model
     public function comment_down_list($comment_id)
     {
         $sql = "SELECT
-                  id,
-                  owner_id,
-                  user_id,
-                  comment
+                  article_comment_down.id,
+                  article_comment_down.owner_id,
+                  article_comment_down.user_id,
+                  article_comment_down.comment,
+                  article_comment_down.date,
+                  users1.name AS owner,
+                  users2.name AS user
                 FROM article_comment_down
-                WHERE comment_id = ?";
+                  INNER JOIN users AS users1 ON users1.id = article_comment_down.owner_id
+                  INNER JOIN users AS users2 ON users2.id = article_comment_down.user_id
+                WHERE article_comment_down.comment_id = ?
+                ORDER BY DATE";
         $query = $this->db->query($sql, array($comment_id));
         return $query->result_array();
     }
@@ -285,6 +293,26 @@ class Media_model extends CI_Model
             return FALSE;
         } else {
             return $bool;
+        }
+    }
+
+    public function add_comment($comment_item)
+    {
+        return $this->db->insert('article_comment', $comment_item);
+    }
+
+    public function delete_comment($comment_item)
+    {
+        if ($comment_item['type'] == 'comments') {
+            $sql = "DELETE FROM article_comment
+                WHERE id = ?";
+            $query = $this->db->query($sql, array($comment_item['id']));
+            return $query->num_rows();
+        } else if ($comment_item['type'] == 'comment-down') {
+            $sql = "DELETE FROM article_comment_down
+                WHERE id = ?";
+            $query = $this->db->query($sql, array($comment_item['id']));
+            return $query->num_rows();
         }
     }
 }

@@ -184,6 +184,65 @@ class Media extends CI_Controller
         }
     }
 
+    public function comment($type)
+    {
+        if (!isset($_SESSION['user'])) {
+            $this->error();
+            return;
+        }
+        if ($type === 'create_comment') {
+            $config = array(
+                array(
+                    'field' => 'article_id',
+                    'label' => 'article_id',
+                    'rules' => 'required|numeric'
+                ),
+                array(
+                    'field' => 'comment',
+                    'label' => 'comment',
+                    'rules' => 'required'
+                )
+            );
+            $this->form_validation->set_rules($config);
+            if ($this->form_validation->run() === FALSE) {
+                echo "格式不合法";
+            } else {
+                $comment_item = array(
+                    'article_id' => $this->input->post('article_id'),
+                    'user_id' => $_SESSION['user']['id'],
+                    'comment' => $this->input->post('comment')
+                );
+                if ($this->media_model->add_comment($comment_item)) echo 'ture';
+                else echo "操作失败";
+            }
+        } else if ($type === 'delete_comment') {
+            $config = array(
+                array(
+                    'field' => 'type',
+                    'label' => 'type',
+                    'rules' => 'required|alpha'
+                ),
+                array(
+                    'field' => 'id',
+                    'label' => 'id',
+                    'rules' => 'required|numeric'
+                )
+            );
+            $this->form_validation->set_rules($config);
+            if ($this->form_validation->run() === FALSE) {
+                echo "格式不合法";
+            } else {
+                $comment_item = array(
+                    'type' => $this->input->post('type'),
+                    'id' => $this->input->post('id'),
+                    'user' => $_SESSION['user']['id']
+                );
+                if ($this->media_model->delete_comment($comment_item)) echo 'ture';
+                else echo "操作失败";
+            }
+        }
+    }
+
     public function create()
     {
         if (!isset($_SESSION['user'])) {
