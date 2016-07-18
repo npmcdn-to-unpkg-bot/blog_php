@@ -58,7 +58,7 @@
 </section>
 <?php include APPPATH . '/views/templates/footer.php' ?>
 </div>
-<script src="/public/lib/bower_components/jquery/jquery.min.js"></script>
+<?php include APPPATH . '/views/templates/script.php' ?>
 <script src="/public/ueditor/ueditor.config.js"></script>
 <script src="/public/ueditor/ueditor.all.min.js"></script>
 <script src="/public/build/home.js"></script>

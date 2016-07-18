@@ -63,6 +63,6 @@
     <?php include APPPATH . '/views/templates/footer.php' ?>
 </div>
 </body>
-<script src="/public/lib/bower_components/jquery/jquery.min.js"></script>
+<?php include APPPATH . '/views/templates/script.php' ?>
 <script src="/public/build/home.js"></script>
 </html>
