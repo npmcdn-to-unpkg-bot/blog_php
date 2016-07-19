@@ -158,7 +158,7 @@
                 type: "post",
                 url: "<?php echo site_url('/media/comment/delete_comment'); ?>",
                 data: {
-                    type: $this.parent().attr('data-type')
+                    type: $this.parent().attr('data-type'),
                     id: $this.parent().attr('data-id')
                 },
                 error: function () {

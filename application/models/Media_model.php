@@ -277,7 +277,6 @@ class Media_model extends CI_Model
     public function delete_article($delete_item)
     {
         $bool = FALSE;
-        $this->db->trans_start();
         $article_sql = "SELECT author_id
                         FROM articles
                         WHERE id = ?;";
@@ -287,13 +286,7 @@ class Media_model extends CI_Model
             $this->db->query("DELETE FROM articles WHERE id=?", array($delete_item['article_id']));
             $bool = TRUE;
         }
-        $this->db->trans_complete();
-
-        if ($this->db->trans_status() === FALSE) {
-            return FALSE;
-        } else {
-            return $bool;
-        }
+        return $bool;
     }
 
     public function add_comment($comment_item)
