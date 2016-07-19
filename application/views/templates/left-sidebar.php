@@ -33,7 +33,7 @@
         <div class="menu">
             <?php //echo anchor('/home', 'HOME', array('class' => 'item')); ?>
             <?php echo anchor('/media', 'MEDIA', array('class' => 'item')); ?>
-            <?php //echo anchor('/opus', 'OPUS', array('class' => 'item')); ?>
+            <?php echo anchor('/account/waterfall', 'FAll', array('class' => 'item')); ?>
             <?php //echo anchor('/about', 'ABOUT', array('class' => 'item')); ?>
         </div>
     </div>

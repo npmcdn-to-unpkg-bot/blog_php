@@ -23,7 +23,7 @@
             <div class="ui container">
                 <?php //echo anchor('/home', 'HOME', array('class' => 'item')); ?>
                 <?php echo anchor('/media', 'MEDIA', array('class' => 'item')); ?>
-                <?php //echo anchor('/opus', 'OPUS', array('class' => 'item')); ?>
+                <?php echo anchor('/account/waterfall', 'FALL', array('class' => 'item')); ?>
                 <?php //echo anchor('/about', 'ABOUT', array('class' => 'item')); ?>
                 <div class="right menu">
                     <a class="ui item" href="<?php if (isset($session)) {
