@@ -17,6 +17,7 @@
   "dependencies": {
     "semantic": "^2.2.1",
     "typeit": "^4.2.3",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "masonry": "^4.1.0"
   }
 }

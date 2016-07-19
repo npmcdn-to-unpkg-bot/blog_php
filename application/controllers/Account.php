@@ -107,7 +107,6 @@ class Account extends CI_Controller
 
     public function error()
     {
-
         $data['title'] = array(
             'title' => 'ERROR',
             'description' => 'err info',
@@ -125,5 +124,16 @@ class Account extends CI_Controller
             $this->form_validation->set_message('username_check', '此用户名已被注册');
             return FALSE;
         }
+    }
+
+    public function waterfall()
+    {
+        $data['title'] = array(
+            'title' => 'WATERFALL',
+            'description' => 'waterfall/瀑布流',
+            'keywords' => '脉友,个人博客'
+        );
+        $data['session'] = isset($_SESSION['user']) ? $_SESSION['user'] : NULL;
+        $this->load->view('waterfall', $data);
     }
 }
