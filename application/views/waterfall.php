@@ -3,64 +3,7 @@
 <head>
     <?php include APPPATH . '/views/templates/meta.php' ?>
     <link rel="stylesheet" href="/public/build/home.css">
-    <style>
-        h3 {
-            line-height: 3em;
-            text-align: center;
-            color: transparent;
-            text-shadow: 0 0 1px rgba(0, 0, 0, .6);
-        }
-
-        .grid {
-            margin: 0 auto;
-        }
-
-        .grid-item {
-            width: 236px;
-            padding: 14px 7px 0 7px;
-            box-sizing: border-box;
-        }
-
-        @media only screen and (max-width: 748px) {
-            .grid {
-                width: 100%;
-            }
-
-            .grid-item {
-                width: 50%;
-            }
-        }
-
-        @media only screen and (min-width: 748px) {
-            .grid {
-                width: 708px;
-            }
-        }
-
-        @media only screen and (min-width: 984px) {
-            .grid {
-                width: 944px;
-            }
-        }
-
-        @media only screen and (min-width: 1220px) {
-            .grid {
-                width: 1180px;
-            }
-        }
-
-        @media only screen and (min-width: 1456px) {
-            .grid {
-                width: 1416px;
-            }
-        }
-
-        img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .3);
-        }
-    </style>
+    <link rel="stylesheet" href="/public/css/waterfall.css">
 </head>
 <body>
 <?php include APPPATH . '/views/templates/left-sidebar.php' ?>
@@ -128,12 +71,5 @@
 <?php include APPPATH . '/views/templates/script.php' ?>
 <script src="/public/lib/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
 <script src="/public/build/home.js"></script>
-<script>
-    $(function () {
-        $('.grid').masonry({
-            // options
-            itemSelector: '.grid-item',
-        });
-    })
-</script>
+<script src="/public/js/waterfall.js"></script>
 </html>
