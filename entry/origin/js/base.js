@@ -9,4 +9,4 @@ $(function () {
     $('.article-info .ui.rating').rating();
     $('.article-list .ui.rating').rating('disable');
     $('.ui.accordion').accordion();
-});
+})

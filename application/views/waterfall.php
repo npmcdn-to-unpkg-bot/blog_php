@@ -70,6 +70,13 @@
 </body>
 <?php include APPPATH . '/views/templates/script.php' ?>
 <script src="/public/lib/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
-<script src="/public/js/waterfall.js"></script>
+<script>
+    $(function () {
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+        });
+    })
+</script>
 <script src="/public/build/home.js"></script>
 </html>
