@@ -64,6 +64,12 @@
                 <img src="/public/imgs/model18.jpg">
             </div>
         </div>
+        <div class="ui button b1">
+            LOAD MORE
+        </div>
+        <div class="ui button b2">
+            LOAD MORE
+        </div>
     </section>
     <?php include APPPATH . '/views/templates/footer.php' ?>
 </div>
@@ -72,4 +78,21 @@
 <script src="/public/lib/bower_components/masonry/dist/masonry.pkgd.min.js"></script>
 <script src="/public/js/waterfall.js"></script>
 <script src="/public/build/home.js"></script>
+<script>
+    $('.pusher section .ui.button.b1').click(function () {
+        var Html = '<div class="grid-item">     <img src="/public/imgs/model1.png"></div>      <div class="grid-item">         <img src="/public/imgs/model2.png"> </div>     <div class="grid-item">         <img src="/public/imgs/model3.png">  </div>                  <div class="grid-item">         <img src="/public/imgs/model4.png"> </div>      <div class="grid-item">         <img src="/public/imgs/model5.jpg"> </div>             <div class="grid-item">       <img src="/public/imgs/model6.png">   </div>            <div class="grid-item">         <img src="/public/imgs/model7.png">  </div>                <div class="grid-item">            <img src="/public/imgs/model8.png">  </div>                           <div class="grid-item">                <img src="/public/imgs/model9.png">  </div>               <div class="grid-item">          <img src="/public/imgs/model10.jpg"> </div>             <div class="grid-item">       <img src="/public/imgs/model11.png">  </div>        <div class="grid-item">         <img src="/public/imgs/model12.png">  </div>           <div class="grid-item">        <img src="/public/imgs/model13.jpg">  </div>   <div class="grid-item">       <img src="/public/imgs/model15.jpg"> </div>  <div class="grid-item">    <img src="/public/imgs/model16.jpg"></div><div class="grid-item"><img src="/public/imgs/model17.jpg"></div><div class="grid-item"><img src="/public/imgs/model18.jpg"></div>'
+        $(Html).appendTo($('section .grid'));
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+        });
+    })
+    $('.pusher section .ui.button.b2').click(function () {
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+        });
+    })
+</script>
 </html>
+
