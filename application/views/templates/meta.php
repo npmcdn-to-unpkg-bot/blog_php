@@ -5,4 +5,4 @@
 <title><?php echo $title['title'] ?></title>
 <meta name="description" content="<?php echo $title['description'] ?>">
 <meta name="keywords" content="<?php echo $title['keywords'] ?>">
-<link rel="stylesheet" href="/public/lib/bower_components/semantic/dist/semantic.min.css">
+<link rel="stylesheet" href="/public/css/semantic.min.css">

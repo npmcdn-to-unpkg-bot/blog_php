@@ -1,0 +1,14 @@
+{
+  "name": "typeit",
+  "homepage": "https://github.com/alexmacarthur/typeit",
+  "version": "4.2.3",
+  "_release": "4.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.2.3",
+    "commit": "ebd1ac93166361ec9d0eb17bfdfc92ee6570a60c"
+  },
+  "_source": "https://github.com/alexmacarthur/typeit.git",
+  "_target": "^4.2.3",
+  "_originalSource": "typeit"
+}

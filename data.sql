@@ -6,7 +6,7 @@ CREATE TABLE `users` (
   `isdelete` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+)
 
 CREATE TABLE `user_visit` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
