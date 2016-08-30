@@ -1,4 +1,2 @@
-entry/node_modules
-entry/public/build
-entry/public/imgs
-entry/public/lib/bower_components
+node_modules
+bower_components
